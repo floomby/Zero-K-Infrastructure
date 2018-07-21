@@ -36,7 +36,6 @@ namespace ZkLobbyServer
 
             RatingCategory cat = RatingCategory.Casual;
             if (b.IsMatchMakerBattle) cat = RatingCategory.MatchMaking;
-            if (b.Mode == PlasmaShared.AutohostMode.Planetwars) cat = RatingCategory.Planetwars;
 
             using (var db = new ZkDataContext())
             {
