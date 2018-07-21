@@ -14,7 +14,7 @@ namespace ZkLobbyServer
         public PlanetWarsServerBattle(ZkLobbyServer server, PlanetWarsMatchMaker.AttackOption option): base(server, null)
         {
             IsMatchMakerBattle = true;
-            ApplicableRating = RatingCategory.Planetwars;
+            ApplicableRating = RatingCategory.Casual;
             EngineVersion = server.Engine;
             ModName = server.Game;
             FounderName = "PlanetWars #" + BattleID;
