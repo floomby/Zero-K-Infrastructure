@@ -11,7 +11,6 @@
     @{
         var casual = Model.GetRating(RatingCategory.Casual);
         var mm = Model.GetRating(RatingCategory.MatchMaking);
-        var pw = Model.GetRating(RatingCategory.Planetwars);
     }
 
     <b>Competitive rank:</b> @(mm.Rank == int.MaxValue ? "Unranked" : $"{mm.Rank}. ({Math.Round(mm.Elo)})")<br />
