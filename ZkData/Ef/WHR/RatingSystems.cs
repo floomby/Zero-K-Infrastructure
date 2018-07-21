@@ -167,14 +167,13 @@ namespace Ratings
                 {
                     var maxAge = DateTime.UtcNow.AddDays(-7);
                     IEnumerable<Account> accounts;
-                    var rating = RatingCategory.Planetwars;
+                    var rating = RatingCategory.Casual;
                     using (var db = new ZkDataContext())
                     {
                         IQueryable<Account> players;
                         if (MiscVar.PlanetWarsMode == PlanetWarsModes.PreGame)
                         {
                             players = db.Accounts.Where(x => x.LastLogin > maxAge && x.FactionID == factionID);
-                            rating = RatingCategory.Casual;
                         }
                         else
                         {
