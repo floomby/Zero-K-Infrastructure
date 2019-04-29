@@ -258,6 +258,28 @@ namespace ZeroKWeb.SpringieInterface
                 }
             }
 
+            foreach (string line in extras.Where(x => x?.StartsWith("facplop") == true))
+            {
+                string[] partsSpace = line.Substring(8).Split(new[] { ',' }, 5);
+                string factory = partsSpace[0];
+                string name = partsSpace[3];
+
+                if (string.IsNullOrEmpty(factory))
+                    continue;
+
+                SpringBattlePlayer player = sb.SpringBattlePlayers.FirstOrDefault(x => x.Account?.Name == name);
+                if (player == null)
+                    continue;
+
+                db.AccountBattleFacplops.InsertOnSubmit(new AccountBattleFacplop
+                {
+                    Account = player.Account,
+                    AccountID = player.AccountID,
+                    SpringBattleID = sb.SpringBattleID,
+                    FactoryName = factory,
+                });
+            }
+
             // chatlogs
             foreach (string line in extras.Where(x => x?.StartsWith("CHATLOG") == true))
             {
