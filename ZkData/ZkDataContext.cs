@@ -17,6 +17,7 @@ namespace ZkData
         public virtual DbSet<AbuseReport> AbuseReports { get; set; }
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<AccountBattleAward> AccountBattleAwards { get; set; }
+        public virtual DbSet<AccountBattleFacplop> AccountBattleFacplops { get; set; }
         public virtual DbSet<AccountCampaignJournalProgress> AccountCampaignJournalProgress { get; set; }
         public virtual DbSet<AccountCampaignProgress> AccountCampaignProgress { get; set; }
         public virtual DbSet<AccountCampaignVar> AccountCampaignVars { get; set; }
@@ -132,6 +133,11 @@ namespace ZkData
 
             modelBuilder.Entity<Account>()
                 .HasMany(e => e.AccountBattleAwards)
+                .WithRequired(e => e.Account)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.AccountBattleFacplops)
                 .WithRequired(e => e.Account)
                 .WillCascadeOnDelete(false);
 
@@ -333,6 +339,10 @@ namespace ZkData
 
             modelBuilder.Entity<AccountBattleAward>()
                 .Property(e => e.AwardKey)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<AccountBattleFacplop>()
+                .Property(e => e.FactoryName)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Campaign>()
