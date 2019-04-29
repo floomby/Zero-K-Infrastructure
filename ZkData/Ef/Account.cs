@@ -29,6 +29,7 @@ namespace ZkData
             AbuseReportsByAccountID = new HashSet<AbuseReport>();
             AbuseReportsByReporterAccountID = new HashSet<AbuseReport>();
             AccountBattleAwards = new HashSet<AccountBattleAward>();
+            AccountBattleFacplops = new HashSet<AccountBattleFacplop>();
             AccountCampaignJournalProgresses = new HashSet<AccountCampaignJournalProgress>();
             AccountCampaignProgress = new HashSet<AccountCampaignProgress>();
             AccountCampaignVars = new HashSet<AccountCampaignVar>();
@@ -176,6 +177,7 @@ namespace ZkData
         public virtual Faction Faction { get; set; }
         public virtual ICollection<AccountRating> AccountRatings { get; set; }
         public virtual ICollection<AccountBattleAward> AccountBattleAwards { get; set; }
+        public virtual ICollection<AccountBattleFacplop> AccountBattleFacplops { get; set; }
         public virtual ICollection<AccountCampaignJournalProgress> AccountCampaignJournalProgresses { get; set; }
         public virtual ICollection<AccountCampaignProgress> AccountCampaignProgress { get; set; }
         public virtual ICollection<AccountCampaignVar> AccountCampaignVars { get; set; }
