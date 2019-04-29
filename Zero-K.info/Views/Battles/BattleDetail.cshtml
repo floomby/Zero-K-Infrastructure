@@ -145,6 +145,10 @@
                             Rank: @u.EloChange.Value.ToString("F1")
                             </span>
                         }
+                        foreach (var plop in Model.AccountBattleFacplops.Where(x => x.AccountID == u.AccountID))
+                        {
+                            <img src="/img/avatars/@(plop.FactoryName).png" height="30" />
+                        }
                         foreach (var award in Model.AccountBattleAwards.Where(x => x.AccountID == u.AccountID))
                         {
                             <img src="/img/Awards/trophy_@(award.AwardKey).png" height="30" title="@award.AwardDescription" />
