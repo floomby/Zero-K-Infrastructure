@@ -13,6 +13,7 @@ namespace ZkData
     {
         public virtual Account Account { get; set; }
         public virtual ICollection<AccountBattleAward> AccountBattleAwards { get; set; }
+        public virtual ICollection<AccountBattleFacplop> AccountBattleFacplops { get; set; }
 
 
         public string BattleType
@@ -76,6 +77,7 @@ namespace ZkData
         public SpringBattle()
         {
             AccountBattleAwards = new HashSet<AccountBattleAward>();
+            AccountBattleFacplops = new HashSet<AccountBattleFacplop>();
             SpringBattlePlayers = new HashSet<SpringBattlePlayer>();
             Events = new HashSet<Event>();
         }
