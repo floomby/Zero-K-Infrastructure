@@ -448,6 +448,7 @@
     <Compile Include="Ef\AbuseReport.cs" />
     <Compile Include="Ef\Account.cs" />
     <Compile Include="Ef\AccountBattleAward.cs" />
+    <Compile Include="Ef\AccountBattleFacplop.cs" />
     <Compile Include="Ef\AccountCampaignJournalProgress.cs" />
     <Compile Include="Ef\AccountCampaignProgress.cs" />
     <Compile Include="Ef\AccountCampaignVar.cs" />
