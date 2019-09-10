@@ -17,6 +17,14 @@ namespace ZkLobbyServer
         {
             if (int.TryParse(arguments, out elo))
             {
+                /* Round to make for clear "brackets".
+                 *
+                 * Ideally this would use the actual WHR brackets,
+                 * but since their thresholds are dynamic it would
+                 * probably be best to be able to specify a rank
+                 * directly (instead of its elo). */
+                elo = (elo + 50) / 100 * 100;
+
                 return string.Empty;
             }
             else return null;
